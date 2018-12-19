@@ -1,0 +1,16 @@
+ctrlloop (control-loop)
+=======================
+
+I found myself copying and pasting this small loop snippet in many places,
+seemed like it should be turned into a micro package.
+
+USAGE:
+
+Read the source code, it's tiny.
+
+Pass in a context, an interval on which to execute your run function, and a
+cleanup function to execute if the the process receives SIGTERM or SIGINT.
+
+If the context is canceled, the control loop aborts.
+If run() returns a non-nil error, the control loop aborts.
+If the process receives SIGTERM/SIGINT, the control loop aborts.
